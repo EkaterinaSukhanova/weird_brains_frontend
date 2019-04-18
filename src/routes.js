@@ -1,33 +1,33 @@
-// import CommentsListContainer from 'containers/CommentsListContainer';
-// import Home from 'components/Home';
-// import UserListContainer from 'containers/UserListContainer';
-// import ContentContainer from 'containers/ContentContainer';
-// import ChatContainer from 'containers/ChatContainer';
-//
-// export default [
-//     {
-//         path: '/',
-//         component: Home,
-//         exact: true,
-//     },
-//     {
-//         path: '/articles',
-//         component: ContentContainer,
-//         exact: true,
-//     },
-//     {
-//         path: '/comments',
-//         component: CommentsListContainer,
-//         exact: true,
-//     },
-//     {
-//         path: '/users',
-//         component: UserListContainer,
-//         exact: true,
-//     },
-//     {
-//         path: '/chat',
-//         component: ChatContainer,
-//         exact: true,
-//     }
-// ]
+import Home from './components/Home';
+import ArticleContent from './components/ArticleContent';
+import InterestingContent from './components/InterestingContent';
+import ShopContent from './components/ShopContent';
+import AboutContent from './components/AboutContent';
+
+export default [
+    {
+        path: '/',
+        component: Home,
+        exact: true,
+    },
+    {
+        path: '/articles',
+        component: ArticleContent,
+        exact: true,
+    },
+    {
+        path: '/interesting',
+        component: InterestingContent,
+        exact: true,
+    },
+    {
+        path: '/shop',
+        component: ShopContent,
+        exact: true,
+    },
+    {
+        path: '/about',
+        component: AboutContent,
+        exact: true,
+    }
+]
