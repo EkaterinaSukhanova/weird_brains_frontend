@@ -1,13 +1,12 @@
-.wrapper {
+.all-articles {
     display: grid;
     grid-gap: 10px;
     grid-template-columns: 33% 33% auto;
 
 }
-    .a {
-
-        grid-column-start: 1;
-        grid-column-end: 3;
-        grid-row-start: 1;
-        grid-row-end: 3;
-    }
+.new-article {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}

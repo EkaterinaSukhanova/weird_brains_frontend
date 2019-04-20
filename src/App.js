@@ -10,12 +10,32 @@ import routes from './routes';
 import navigation from './navigation';
 import PropTypes from "prop-types";
 
-import image from './static/icon48.png'
-
 const styles = {
+    navItemText: {
+        display: 'none',
+    },
+    navItemImage: {
+
+    },
     link: {
         textDecoration: 'none',
-        margin: '0 15px',
+        margin: '0 25px',
+        fontFamily: 'Amatic SC, cursive',
+        width: '60px',
+        '&:hover': {
+            // opacity: 0.15,
+            color: '#706761',
+
+            '& $navItemText': {
+                display: 'block',
+                margin: 0,
+            },
+            '& $navItemImage': {
+                display: 'none',
+                margin: 0,
+            },
+        },
+
     }
 };
 
@@ -26,7 +46,11 @@ class App extends Component {
     return (
     <div className="App">
       <Header>
-          {navigation.map((item, idx) => <Link key={idx} to={item.link} className={classes.link}><img src={image} alt="Logo" /></Link>)}
+          {navigation.map((item, idx) =>
+              <Link key={idx} to={item.link} className={classes.link}>
+                  <img className={classes.navItemImage} src={item.logo} alt="Logo"/>
+                  <span className={classes.navItemText}>{item.text}</span>
+              </Link>)}
       </Header>
       <Switch>
           {routes.map((route, idx) => <Route key={idx} {...route} />)}

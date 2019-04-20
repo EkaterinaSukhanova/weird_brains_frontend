@@ -1,27 +1,34 @@
+
+import home from './static/home.png'
+import articles from './static/articles.png'
+import interest from './static/interest.png'
+import shop from './static/shop.png'
+import about from './static/about.png'
+
 export default [
     {
         link: '/',
         text: 'Главная',
-        logo: '../../static/123.jpg',
+        logo: home,
     },
     {
         link: '/articles',
         text: 'Статьи',
-        logo: '../static/123.jpg',
+        logo: articles,
     },
     {
         link: '/interesting',
-        text: 'Это Интересно',
-        logo: '',
+        text: 'Интересно',
+        logo: interest,
     },
     {
         link: '/shop',
         text: 'Магазин',
-        logo: 'static/icon48.png',
+        logo: shop,
     },
     {
         link: '/about',
         text: 'О проекте',
-        logo: 'static/icon48.png',
+        logo: about,
     },
 ]

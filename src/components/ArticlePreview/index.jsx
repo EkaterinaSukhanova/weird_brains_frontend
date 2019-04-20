@@ -2,28 +2,40 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import withStyles from "@material-ui/core/es/styles/withStyles";
-
-import image from '../../static/123.jpg';
-
-const styles = {
-
-};
+import './index.css';
 
 class ArticlePreview extends React.Component {
+
+    static propTypes = {
+        size: PropTypes.oneOf(['small', 'big']),
+        nameImage: PropTypes.oneOf(['image1', 'image2', 'image3', 'image4'])
+    };
+
+    static defaultProps = {
+        size: 'small',
+        nameImage: 'image4',
+    };
+
     render() {
-        const { classes, children } = this.props;
+        const { size, nameImage, description} = this.props;
+
+        const imageClasses = classNames('image', {
+            'image-small': size === 'small',
+            'image-big': size === 'big',
+        });
+
+        const articleClasses = classNames('article', {
+            'article-small': size === 'small',
+            'article-big': size === 'big',
+        });
+
         return (
-            <div>
-                <img src={image} alt='image' height='200px'/>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, illo!</p>
+            <div className={articleClasses}>
+                <img src={nameImage} alt='image' className={imageClasses}/>
+                <p>{description}</p>
             </div>
         );
     }
 }
 
-ArticlePreview.propTypes = {
-    classes: PropTypes.object.isRequired,
-};
-
-export default withStyles(styles)(ArticlePreview);
+export default ArticlePreview;

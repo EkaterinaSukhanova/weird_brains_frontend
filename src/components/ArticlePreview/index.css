@@ -1,0 +1,12 @@
+.article-big img, .article-small img{
+    text-align: center;
+}
+.article-small {
+    margin: 0 10px;
+}
+.image-small {
+    width: 90%;
+}
+.image-big {
+    width: 90%;
+}
