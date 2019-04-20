@@ -10,11 +10,12 @@ import routes from './routes';
 import navigation from './navigation';
 import PropTypes from "prop-types";
 
+import image from './static/icon48.png'
+
 const styles = {
     link: {
-        width: '100%',
-        height: '100%',
         textDecoration: 'none',
+        margin: '0 15px',
     }
 };
 
@@ -25,7 +26,7 @@ class App extends Component {
     return (
     <div className="App">
       <Header>
-          {navigation.map((item, idx) => <Link key={idx} to={item.link} className={classes.link}>{item.text}</Link>)}
+          {navigation.map((item, idx) => <Link key={idx} to={item.link} className={classes.link}><img src={image} alt="Logo" /></Link>)}
       </Header>
       <Switch>
           {routes.map((route, idx) => <Route key={idx} {...route} />)}

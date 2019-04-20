@@ -12,9 +12,10 @@ const styles = {
         textAlign: 'center',
     },
     menu: {
-        listStyleType: 'none',
         paddingLeft: 0,
         textAlign: 'center',
+        display: 'flex',
+        justifyContent: 'center',
     },
     navItems: {
         "& li": {
@@ -41,9 +42,8 @@ class Header extends React.Component {
                     <p>О мозгах и извилинах</p>
                 </div>
                 <div className={classes.menu}>
-                    <ul className={classes.navItems}>
-                        {children.map((link, idx) => <li key={idx}>{link}</li>)}
-                    </ul>
+                    {children}
+                    {/*{children.map((link, idx) => link)}*/}
                 </div>
             </header>
         );
