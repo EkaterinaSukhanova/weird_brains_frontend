@@ -3,5 +3,5 @@ FROM ymedlop/npm-cache-resource
 WORKDIR /app
 COPY . /app/
 
-CMD npm config set registry http://registry.npmjs.org/ && npm install && \
+CMD npm install && \
     npm run dev && cp -r dist/. /static/
