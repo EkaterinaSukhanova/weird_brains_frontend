@@ -7,7 +7,7 @@ module.exports = {
         main: path.resolve(__dirname, 'src', 'index.js'),
     },
     output: {
-        path: path.join(__dirname, 'dist'),
+        path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js'
     },
     resolve: {
@@ -51,6 +51,8 @@ module.exports = {
     },
     devServer: {
         historyApiFallback: true,
+        publicPath: "/dist/", // here's the change
+        contentBase: path.join(__dirname, 'public')
     },
     plugins: [
         new ExtractTextPlugin({ filename: 'style.css' }),
