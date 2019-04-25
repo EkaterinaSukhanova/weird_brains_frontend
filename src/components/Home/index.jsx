@@ -31,13 +31,12 @@ const styles = {
     }
 };
 
-let newArticle = {
-    image: image1,
-    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur blanditiis dolore minima voluptates.',
-    text: '',
-};
-
 let articles = [
+    {
+        image: image1,
+        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur blanditiis dolore minima voluptates.',
+        text: '',
+    },
     {
         image: image2,
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, mollitia?',
@@ -78,20 +77,24 @@ let articles = [
 
 class Home extends React.Component {
     render() {
-        const { classes } = this.props;
+        //const { articles } = this.props;
 
         return (
             <div>
                 <h2>Home page</h2>
                 <div className='all-articles'>
-                    <div className='new-article'><ArticlePreview size='big' nameImage={newArticle.image} description={newArticle.description}/></div>
-                    {articles.map((item, idx) => <ArticlePreview nameImage={item.image} description={item.description}/>)}
+                    {articles.map((item, idx) => {
+                        if (idx === 0) {
+                            return <div className='new-article'><ArticlePreview size='big' nameImage={item.image} description={item.description}/></div>
+                        }
+                        return <ArticlePreview nameImage={item.image} description={item.description}/>
+                    })
+                    }
                 </div>
             </div>
         );
     }
 }
-
 
 Home.propTypes = {
     classes: PropTypes.object.isRequired,
