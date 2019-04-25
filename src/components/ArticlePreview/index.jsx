@@ -8,12 +8,10 @@ class ArticlePreview extends React.Component {
 
     static propTypes = {
         size: PropTypes.oneOf(['small', 'big']),
-        nameImage: PropTypes.oneOf(['image1', 'image2', 'image3', 'image4'])
     };
 
     static defaultProps = {
         size: 'small',
-        nameImage: 'image4',
     };
 
     render() {
@@ -29,9 +27,10 @@ class ArticlePreview extends React.Component {
             'article-big': size === 'big',
         });
 
+        const url = 'http://92.53.78.204' + nameImage;
         return (
             <div className={articleClasses}>
-                <img src={nameImage} alt='image' className={imageClasses}/>
+                <img src={url} alt='image' className={imageClasses}/>
                 <p>{description}</p>
             </div>
         );

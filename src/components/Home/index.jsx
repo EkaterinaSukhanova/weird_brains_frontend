@@ -6,13 +6,6 @@ import './index.css';
 import withStyles from "@material-ui/core/es/styles/withStyles";
 import ArticlePreview from '../ArticlePreview';
 import {Link} from "react-router-dom";
-import image from "../../static/icon48.png";
-import Header from "../Header";
-
-import image1 from '../../static/IMG_0001.jpg';
-import image2 from '../../static/IMG_0002.jpg';
-import image3 from '../../static/IMG_0003.jpg';
-import image4 from '../../static/IMG_0004.jpg';
 
 const styles = {
     mainArticles: {
@@ -31,53 +24,9 @@ const styles = {
     }
 };
 
-let articles = [
-    {
-        image: image1,
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur blanditiis dolore minima voluptates.',
-        text: '',
-    },
-    {
-        image: image2,
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, mollitia?',
-        text: '',
-    },
-    {
-        image: image3,
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, mollitia?',
-        text: '',
-    },
-    {
-        image: image4,
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, magni.',
-        text: '',
-    },
-    {
-        image: image2,
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis dolore incidunt iste.',
-        text: '',
-    },
-    {
-        image: image4,
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, mollitia?',
-        text: '',
-    },
-    {
-        image: image3,
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, dolorum, ullam?',
-        text: '',
-    },
-    {
-        image: image2,
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, exercitationem, temporibus?',
-        text: '',
-    },
-];
-
-
 class Home extends React.Component {
     render() {
-        //const { articles } = this.props;
+        const { articles } = this.props;
 
         return (
             <div>
@@ -85,9 +34,9 @@ class Home extends React.Component {
                 <div className='all-articles'>
                     {articles.map((item, idx) => {
                         if (idx === 0) {
-                            return <div className='new-article'><ArticlePreview size='big' nameImage={item.image} description={item.description}/></div>
+                            return <div className='new-article' key={item.id}><ArticlePreview size='big' nameImage={item.main_img} description={item.title}/></div>
                         }
-                        return <ArticlePreview nameImage={item.image} description={item.description}/>
+                        return <div key={item.id}><ArticlePreview nameImage={item.main_img} description={item.title}/></div>
                     })
                     }
                 </div>

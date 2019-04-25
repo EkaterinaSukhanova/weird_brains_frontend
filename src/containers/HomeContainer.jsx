@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 
 import Home from '../components/Home';
 
-export default class ContentContainer extends Component{
+export default class HomeContainer extends Component{
     constructor(props){
         super(props);
 
@@ -12,7 +12,7 @@ export default class ContentContainer extends Component{
     }
 
     load = () => {
-        fetch(`http://82.202.204.246/api/post/get_all`)
+        fetch(`http://92.53.78.204/api/post/get_all`)
             .then((response) => response.json())
             .then((allArticles) =>{
                 console.log('ok');

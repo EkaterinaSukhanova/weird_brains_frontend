@@ -20,7 +20,7 @@ class App extends Component {
     <div className="App">
       <Header />
       <Switch>
-          {routes.map((route, idx) => <Route key={idx} {...route} />)}
+          {routes.map((route) => <Route key={route.key} {...route} />)}
       </Switch>
     </div>
     );
