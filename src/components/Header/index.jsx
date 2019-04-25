@@ -30,9 +30,9 @@ const styles = {
     },
     link: {
         textDecoration: 'none',
-        margin: '0 15px',
+        margin: '0 30px',
         fontFamily: 'Noteworthy-Bold, cursive',
-        width: '80px',
+        width: '45px',
         '&:hover': {
             // opacity: 0.15,
             '& $navItemText': {
