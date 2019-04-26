@@ -12,7 +12,7 @@ export default class HomeContainer extends Component{
     }
 
     load = () => {
-        fetch(`http://84.201.141.91/api/post/get_all`)
+        fetch(`/api/post/get_all`)
             .then((response) => response.json())
             .then((allArticles) =>{
                 console.log('ok');
