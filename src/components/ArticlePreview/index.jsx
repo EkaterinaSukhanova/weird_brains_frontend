@@ -27,10 +27,9 @@ class ArticlePreview extends React.Component {
             'article-big': size === 'big',
         });
 
-        const url = 'http://84.201.141.91' + nameImage;
         return (
             <div className={articleClasses}>
-                <img src={url} alt='image' className={imageClasses}/>
+                <img src={nameImage} alt='image' className={imageClasses}/>
                 <p>{description}</p>
             </div>
         );
